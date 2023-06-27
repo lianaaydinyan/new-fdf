@@ -17,8 +17,8 @@ void	char2d(char **str)
 	int		i;
 
 	i = -1;
-	while(str[++i])
-		free(str[i]);
+	while (str[++i])
+		free (str[i]);
 	free(str);
 }
 
@@ -37,6 +37,7 @@ void	get_map_heigth(t_mapolo *map, char **av)
 	while (line)
 	{
 		map->heigth++;
+		free(line);
 		line = get_next_line(fd);
 	}
 	close(fd);
@@ -59,51 +60,12 @@ void	get_map_width(t_mapolo *map, char **av)
 	while (line)
 	{
 		i = digit_count(line, map);
+		free(line);
 		line = get_next_line(fd);
 		if (!line)
-			break;
+			break ;
 		if (digit_count(line, map) != i)
 			width_error(i);
 	}
 	close(fd);
-}
-
-int digit_count(char *line, t_mapolo *map)
-{
-	int count;
-	int i;
-
-	count = 0;
-	i = 0;
-
-	while (line[i])
-	{
-		if (line[i] != ' ')
-		{
-			if (line[i] >= '0' && line[i] <= '9')
-			{
-				count++;
-				while (line[i + 1] >= '0' && line[i + 1] <= '9')
-					i++;
-			}
-		}
-		i++;
-	}
-	map->width = count;
-	return (count);
-}
-
-int	line_checkin(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		{//taby stugel
-			if((str[i] <= '9' && str[i] >= '0' ) || (str[i] == ' ' || str[i] == '\n' ))
-				i++;
-			else
-				no_digit();
-		}
-	return (1);
 }

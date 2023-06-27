@@ -14,32 +14,32 @@
 
 void	map_error(void)
 {
-	printf("giving none numeric arguments");
+	ft_printf("giving none numeric arguments");
 	exit(1);
 }
 
 void	no_digit(void)
 {
-	printf("none numeric arguments");
+	ft_printf("none numeric arguments");
 	exit(1);
 }
 
-void	width_error(int	i)
+void	width_error(int i)
 {
-	printf("Error: Width - ");
-	printf("[ %d ]",i);
-	printf(" exceeds the standard width.");
+	ft_printf("Error: Width - ");
+	ft_printf("[ %d ]", i);
+	ft_printf(" exceeds the standard width.");
 	exit(1);
 }
 
 void	empty_map(void)
 {
-	printf("your map is empty");
+	ft_printf("your map is empty");
 	exit(1);
 }
 
 void	split_error(void)
 {
-	printf("spliting error");
+	ft_printf("spliting error");
 	exit(1);
 }

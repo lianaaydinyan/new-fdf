@@ -12,26 +12,26 @@
 
 #include "fdf.h"
 
-void args_error(void)
+void	args_error(void)
 {
-	printf("arguments aren't rigth bro");
+	ft_printf("arguments aren't rigth bro");
 	exit(1);
 }
 
 void	open_error(void)
 {
-	printf("can't open file");
+	ft_printf("can't open file");
 	exit(1);
 }
 
 void	next_line(void)
 {
-	printf("you need to retry your get_next_line");
+	ft_printf("you need to retry your get_next_line");
 	exit(1);
 }
 
 void	allocating(void)
 {
-	printf("allocating falses");
+	ft_printf("allocating falses");
 	exit(1);
 }
